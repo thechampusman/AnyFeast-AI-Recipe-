@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'meal_planner_screen.dart';
 
 void main() => runApp(
   const MaterialApp(
@@ -6,104 +7,6 @@ void main() => runApp(
     home: MealPlannerScreen(),
   ),
 );
-
-class MealPlannerScreen extends StatelessWidget {
-  const MealPlannerScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        leading: const Icon(Icons.arrow_back, color: Colors.black),
-        title: Row(
-          children: [
-            Icon(Icons.calendar_today_outlined, color: Colors.red[800]),
-            const SizedBox(width: 8),
-            const Text(
-              'Weekly Meal Planner',
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.auto_awesome, color: Colors.red[800]),
-            onPressed: () {},
-          ),
-        ],
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Calendar Icon Placeholder
-            Icon(
-              Icons.calendar_month_outlined,
-              size: 120,
-              color: Colors.grey[300],
-            ),
-            const SizedBox(height: 40),
-            // Main Title
-            const Text(
-              'Complete Your Profile',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.black87,
-              ),
-            ),
-            const SizedBox(height: 16),
-            // Description Text
-            Text(
-              'Complete your health profile to generate personalized meal plans based on your goals, preferences, and dietary needs.',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey[600],
-                height: 1.5,
-              ),
-            ),
-            const SizedBox(height: 40),
-            // Red Rounded Button
-            SizedBox(
-              width: double.infinity,
-              height: 55,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const HealthProfileSetup(),
-                    ),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFB71C1C), // Dark Red
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  elevation: 2,
-                ),
-                child: const Text(
-                  'Complete Profile',
-                  style: TextStyle(fontSize: 18, color: Colors.white),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
 
 class HealthProfileSetup extends StatefulWidget {
   const HealthProfileSetup({super.key});
